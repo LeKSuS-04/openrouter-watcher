@@ -1,0 +1,10 @@
+services:
+  openrouter-watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      OPENROUTER_API_TOKEN: ${OPENROUTER_API_TOKEN}
